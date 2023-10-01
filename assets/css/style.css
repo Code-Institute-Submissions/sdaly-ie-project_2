@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat+Alternates:ital,wght@1,800&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat+Alternates:ital,wght@1,800&family=Roboto:wght@300&display=swap");
 
 * {
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 header {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     text-align: center;
     padding: 20px;
     background-color: #f5f5f5;
@@ -71,7 +71,7 @@ a {
 
 h1 {
     padding-bottom: 20px;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     color: #333;
     text-transform: uppercase;
     font-size: 36px;
@@ -81,7 +81,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     display: flex;
     justify-content: center;
     margin-top: 25px;
@@ -89,7 +89,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     line-height: 2;
 }
 
@@ -113,14 +113,72 @@ h3 {
     max-width: 100%;
 }
 
+.game-container {
+    width: auto;
+    height: auto;
+}
+
 .game-box {
     transition: transform 0.3s;
+}
+
+.player-container {
+    margin: auto;
+}
+
+.far {
+    font-size: 50px;
+    margin-right: 40px;
+}
+
+#player .far,
+#player .choice {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#computer .far,
+#computer .choice {
+    color: black;
+}
+
+#player .far:last-of-type,
+#computer .far:last-of-type {
+    margin-right: 0;
+}
+
+.selected {
+    color: red !important;
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-text {
+    font-size: 40px;
+    margin: unset;
+    margin-top: 20px;
 }
 
 /* When cursor hovers over the image, it enlarges */
 .game-box:hover {
     transform: scale(1.1);
 }
+
 /* Positioning of Footer icons horizontally across webpage */
 .social {
     display: flex;
@@ -131,7 +189,7 @@ h3 {
     padding: 25px;
 }
 
-/* Turns fontawesome icons colour to black */
+/* Turns fontawesome icons colour  */
 .social a {
     color: white;
 }
@@ -141,7 +199,7 @@ h3 {
     transform: scale(1.6);
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
     .hamburger {
         display: block;
     }
@@ -177,10 +235,9 @@ h3 {
     .nav-menu.active {
         left: 0;
     }
-
 }
 
-@media(max-width:414px) {
+@media (max-width: 414px) {
     .hamburger {
         display: block;
     }
@@ -216,10 +273,9 @@ h3 {
     .nav-menu.active {
         left: 0;
     }
-
 }
 
-@media(max-width:320px) {
+@media (max-width: 320px) {
     .hamburger {
         display: block;
     }
@@ -255,5 +311,4 @@ h3 {
     .nav-menu.active {
         left: 0;
     }
-
 }
