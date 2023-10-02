@@ -1,39 +1,94 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# __Project 2__
+## __Introducing:__ 
+### Rock, Paper, Scissors, Lizard, Spock - The Ultimate Online Hand Game!
 
-Welcome,
+![Mockup Screen Generator: Initial Landing Page Screenshot](assets/images/responsive.jpg)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+From the ancient Chinese dynasty emerges a hand game that has traveled through the silk routes, sailed the seas, and spanned centuries to reach us: Rock, Paper, Scissors. Originally christened "shoushiling", this game wove its way into Japanese traditions as "jan-ken" before making its historic journey to the shores of Europe and America. Its simplicity charmed generations, and the game became a household name across continents.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+But, like all great legends, it was destined for evolution.
 
-## Codeanywhere Reminders
+Enter the 21st century, and the game is reborn with a twist, thanks to the ingenuity of Sam Kass and Karen Bryla. This dynamic duo introduced two cunning new characters to the mix: the Lizard and Spock! Their creation added layers of strategy, reduced the monotony of ties, and redefined the classic, giving it a fresh, modern feel.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+![Mockup Screen Generator: How to Play Screenshot](assets/images/responsive1.jpg)
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+While its origins may be humble, its claim to fame came under the limelight of Hollywood. The streets buzzed, social media trended, and living rooms laughed as Sheldon from "The Big Bang Theory" introduced the world to the intricate ballet of Rock, Paper, Scissors, Lizard, Spock. Now, with the power of HTML5, CSS3, and Javascript, we bring this exciting game to your screens. Whether you're a nostalgic enthusiast or a new fan looking for a strategy-filled showdown, this game is designed for you!
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+![Mockup Screen Generator: Play the Game Screenshot](assets/images/responsive2.jpg)
 
-`http_server`
+So, what will it be? Rock, Paper, Scissors, Lizard, or Spock? Choose wisely and may the odds be ever in your favor!
+<br>
+<br>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## __Testing:__
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+>__Browser compatability assessment:__
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+|           Browser          |     Notes     |
+| -------------------------- | ------------- |
+| Chrome                     | Tested: works |
+| Microsoft Edge             | Tested: works |
+| FireFox                    | Tested: works |
+| Safari                     | Tested: works |
+| DuckDuckGo                 | Tested: works |
 
-To log into the Heroku toolbelt CLI:
+>__Responsive Design table:__
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+|        Screen Model        |     Notes     |
+| -------------------------- | ------------- |
+| iPhone SE                  | Tested: works |
+| iPhone XR                  | Tested: works |
+| iPhone 12 Pro              | Tested: works |
+| Pixel 5                    | Tested: works |
+| Samsung Galaxy S8+         | Tested: works |
+| Samsung Galaxy S20 Ultra   | Tested: works |
+| iPad Air                   | Tested: works |
+| iPad Mini                  | Tested: works |
+| Surface Pro 7              | Tested: works |
+| Surface Duo                | Tested: works |
+| Galaxy Fold                | Tested: works |
+| Samsung Galaxy A51/71      | Tested: works |
+| Nest Hub                   | Tested: works |
+| Nest Hub Max               | Tested: works |
+| Medium Desktop 992px       | Tested: works |
+| Large Desktop 1200px       | Tested: works |
+| XL Desktop >1200px         | Tested: works |
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+_Note: The above testing was carried out in Chrome DevTools_ 
+<br>
+<br>
 
----
+### __HTML5, CSS3 and JavaScript Validation Testing:__
 
-Happy coding!
+* __HTML5 Validation Results:__ 
+_No errors were returned when passing code through the official W3C validator by direct input._
+
+![W3C Markup Validation Service Result Screenshot](assets/images/html-validation.jpg)
+<br>
+<br>
+ 
+* __CSS3 Validation Results:__ 
+_No errors were found when passing code through the official (Jigsaw) validator by direct input._
+
+![W3C CSS Validation Service Overall Result Screenshot](assets/images/css-validation1.jpg)
+
+__Note:__ _However, (x1) Warning was observed and this was related to the @import url()._
+
+![W3C CSS Validation Service Warning Screenshot](assets/images/css-warning.jpg)
+
+Requiring further assessment
+
+![W3C CSS Validation Service Warning Screenshot](assets/images/css-extra-check.jpg)
+
+
+<br>
+<br>
+ 
+* __JavaScript Validation Results:__
+_No errors or warnings were reported when passing code through the JSHint tool. 
+__Note:__ Configure option, 'New JavaScript features (ES6)' was set to enabled for 
+assessment_
+
+![JSHint Validator Result Screenshot](assets/images/javascript-validation.jpg)
+
