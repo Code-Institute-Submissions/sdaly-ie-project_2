@@ -224,8 +224,9 @@ used to reset the margin property to its initial value */
     transform: scale(1.6);
 }
 
-/* Responsive design styling for tablet devices */
-@media (max-width: 768px) {
+/* Responsive design styling for tablet devices (768px), smartphones (414px) & 
+smaller smartphone devices (320px) */
+@media (max-width: 768px), (max-width: 414px), (max-width: 320px) {
 
     /* Displays a hamburger, which is three horizontal lines as a vertical block */
     .hamburger {
@@ -253,7 +254,6 @@ used to reset the margin property to its initial value */
      the viewport width when transitions smoothly into view */
     .nav-menu {
         position: fixed;
-        top: 11em;
         left: -55%;
         gap: 0;
         flex-direction: column;
@@ -272,107 +272,32 @@ used to reset the margin property to its initial value */
     edge of its container. */
     .nav-menu.active {
         left: 0;
+    }
+}
+
+/* Responsive design styling for tablet devices */
+@media (max-width: 768px) {
+    /* Adjusts the positioning of navigation menu for tablet devices, 
+       setting the top property to 11em. */    
+    .nav-menu {
+        top: 11em;
     }
 }
 
 /* Responsive design styling for smartphone devices */
 @media (max-width: 414px) {
-
-    /* Displays a hamburger, which is three horizontal lines as a vertical block */
-    .hamburger {
-        display: block;
-    }
-
-    /* When hamburger is actived the middle horitonal line disappears */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    /* The activated hamburgers top horitonal line shifts and rotates */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    /* The activated hamburgers bottom horitonal line also shifts and rotates. 
-    Together lines 1 and 3 cross forming an X symbol to close the menu */
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Styling for nav menu that is initially positioned off-screen to the left,
-    which is a white column with centralized menu text, that can occupy 55% of 
-    the viewport width when transitions smoothly into view */
+    /* Adjusts the positioning of navigation menu for smartphone devices, 
+       by setting the top property to 19em. */    
     .nav-menu {
-        position: fixed;
         top: 19em;
-        left: -55%;
-        gap: 0;
-        flex-direction: column;
-        background-color: white;
-        width: 55%;
-        text-align: center;
-        transition: 0.3s;
-    }
-
-    /* Spacing for individual navigation items */
-    .nav-item {
-        margin: 16px 0;
-    }
-
-    /* When navigation menu is active, position it starting from the left 
-    edge of its container. */
-    .nav-menu.active {
-        left: 0;
     }
 }
 
 /* Responsive design styling for smaller smartphone devices */
 @media (max-width: 320px) {
-
-    /* Displays a hamburger, which is three horizontal lines as a vertical block */
-    .hamburger {
-        display: block;
-    }
-
-    /* When hamburger is actived the middle horitonal line disappears */
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    /* The activated hamburgers top horitonal line shifts and rotates */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    /* The activated hamburgers bottom horitonal line also shifts and rotates. 
-    Together lines 1 and 3 cross forming an X symbol to close the menu */
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Styling for nav menu that is initially positioned off-screen to the left,
-    which is a white column with centralized menu text, that can occupy 55% of 
-    the viewport width when transitions smoothly into view */
+    /* Adjusts the positioning of navigation menu for smaller smartphone devices, 
+       by setting the top property to 22em. */    
     .nav-menu {
-        position: fixed;
         top: 22em;
-        left: -55%;
-        gap: 0;
-        flex-direction: column;
-        background-color: white;
-        width: 55%;
-        text-align: center;
-        transition: 0.3s;
-    }
-
-    /* Spacing for individual navigation items */
-    .nav-item {
-        margin: 16px 0;
-    }
-
-    /* When navigation menu is active, position it starting from the left 
-    edge of its container. */
-    .nav-menu.active {
-        left: 0;
     }
 }

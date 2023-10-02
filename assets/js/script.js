@@ -1,39 +1,51 @@
-// Code Bibliography:
-// Hodovaniuk M. "How to Create Rock Paper Scissors Spock Lizard in JavaScript." Hackernoon, 09 May 2021, https://hackernoon.com/how-to-create-rock-paper-scissors-spock-lizard-in-javascript-991k36hy
-// Dima. "How to code Rock, Paper, Scissors, Lizard and Spoke in Javascript." Competent Programming channel - YouTube, 2021, https://www.youtube.com/watch?v=lV2BMXdsDmc
-// Yadav P. "Rock, Paper, Scissor, Lizard, Spock game in javascript." Learners Bucket, 19 May 2020, https://learnersbucket.com/tutorials/js-projects/rock-paper-scissor-lizard-spock-game-in-javascript/
-// Brennan. "Rock, Paper, Scissors, Lizard, Spock." CodePen, 2023, https://codepen.io/763004/pen/pPGGyP
-// Wong J, Neagoie A. "JavaScript Web Projects: 20 Projects to Build Your Portfolio." ZTM, 2023, https://academy.zerotomastery.io/courses/enrolled/1007166
-// Nunez M. "JavaScript - How to Create a Responsive Hamburger Menu with HTML, CSS, & JavaScript." Web Dev Tutorials - YouTube, 2021, https://www.youtube.com/watch?v=flItyHiDm7E
+/* Code Bibliography:
+ * Hodovaniuk M. "How to Create Rock Paper Scissors Spock Lizard in JavaScript." Hackernoon, 09 May 2021, https://hackernoon.com/how-to-create-rock-paper-scissors-spock-lizard-in-javascript-991k36hy
+ * Dima. "How to code Rock, Paper, Scissors, Lizard and Spoke in Javascript." Competent Programming channel - YouTube, 2021, https://www.youtube.com/watch?v=lV2BMXdsDmc
+ * Yadav P. "Rock, Paper, Scissor, Lizard, Spock game in javascript." Learners Bucket, 19 May 2020, https://learnersbucket.com/tutorials/js-projects/rock-paper-scissor-lizard-spock-game-in-javascript/
+ * Brennan. "Rock, Paper, Scissors, Lizard, Spock." CodePen, 2023, https://codepen.io/763004/pen/pPGGyP
+ * Wong J, Neagoie A. "JavaScript Web Projects: 20 Projects to Build Your Portfolio." ZTM, 2023, https://academy.zerotomastery.io/courses/enrolled/1007166
+ * Nunez M. "JavaScript - How to Create a Responsive Hamburger Menu with HTML, CSS, & JavaScript." Web Dev Tutorials - YouTube, 2021, https://www.youtube.com/watch?v=flItyHiDm7E
+*/
 
-// Obtain DOM elements for scores and choices.
-const playerScoreEl = document.getElementById("playerScore");
-const playerChoiceEl = document.getElementById("playerChoice");
-const computerScoreEl = document.getElementById("computerScore");
-const computerChoiceEl = document.getElementById("computerChoice");
-
-// Reference DOM elements to player's choices.
-const playerRock = document.getElementById("playerRock");
-const playerPaper = document.getElementById("playerPaper");
-const playerScissors = document.getElementById("playerScissors");
-const playerLizard = document.getElementById("playerLizard");
-const playerSpock = document.getElementById("playerSpock");
-
-// Reference DOM elements to computer's choices.
-const computerRock = document.getElementById("computerRock");
-const computerPaper = document.getElementById("computerPaper");
-const computerScissors = document.getElementById("computerScissors");
-const computerLizard = document.getElementById("computerLizard");
-const computerSpock = document.getElementById("computerSpock");
-
-// Obtain all game icons from the DOM.
-const allGameIcons = document.querySelectorAll(".far");
-
-// Reference DOM element for displaying game result.
-const resultText = document.getElementById("resultText");
+/* 
+ * The constant ELEMENTS, contains references to HTML elements related to the game.
+ * Where it organizes these references into 'player' and 'computer'.
+ * Each section has its score, choice and game option elements 
+ * (rock, paper, scissors, lizard, spock).
+ */
+const ELEMENTS = {
+    player: {
+        score: document.getElementById("playerScore"),
+        choice: document.getElementById("playerChoice"),
+        options: {
+            rock: document.getElementById("playerRock"),
+            paper: document.getElementById("playerPaper"),
+            scissors: document.getElementById("playerScissors"),
+            lizard: document.getElementById("playerLizard"),
+            spock: document.getElementById("playerSpock")
+        }
+    },
+    computer: {
+        score: document.getElementById("computerScore"),
+        choice: document.getElementById("computerChoice"),
+        options: {
+            rock: document.getElementById("computerRock"),
+            paper: document.getElementById("computerPaper"),
+            scissors: document.getElementById("computerScissors"),
+            lizard: document.getElementById("computerLizard"),
+            spock: document.getElementById("computerSpock")
+        }
+    },
+    
+    // Obtain all game icons from the DOM.
+    allGameIcons: document.querySelectorAll(".far"),    
+    
+    // Reference DOM element for displaying game result.
+    resultText: document.getElementById("resultText")
+};
 
 // Define the game's rules and interactions.
-const choices = {
+const CHOICES = {
     rock: {
         name: "Rock",
         defeats: {
@@ -72,83 +84,55 @@ let computerChoice = "";
 
 // Remove 'selected' class from all icons.
 function resetSelected() {
-    allGameIcons.forEach((icon) => {
-        icon.classList.remove("selected");
-    });
+    ELEMENTS.allGameIcons.forEach(icon => icon.classList.remove("selected"));
 }
 
 // Reset game state: scores, choices, and visual indicators.
 function resetAll() {
     playerScoreNumber = 0;
     computerScoreNumber = 0;
-    playerScoreEl.textContent = playerScoreNumber;
-    computerScoreEl.textContent = computerScoreNumber;
-    playerChoiceEl.textContent = "";
-    computerChoiceEl.textContent = "";
-    resultText.textContent = "";
+    ELEMENTS.player.score.textContent = playerScoreNumber;
+    ELEMENTS.computer.score.textContent = computerScoreNumber;
+    ELEMENTS.player.choice.textContent = "";
+    ELEMENTS.computer.choice.textContent = "";
+    ELEMENTS.resultText.textContent = "";
     resetSelected();
 }
+
+// Make 'resetAll' function globally accessible.
 window.resetAll = resetAll;
 
 // Determine computer's choice randomly.
 function computerRandomChoice() {
-    const computerChoiceNumber = Math.random();
-    if (computerChoiceNumber < 0.2) {
-        computerChoice = "rock";
-    } else if (computerChoiceNumber <= 0.4) {
-        computerChoice = "paper";
-    } else if (computerChoiceNumber <= 0.6) {
-        computerChoice = "scissors";
-    } else if (computerChoiceNumber <= 0.8) {
-        computerChoice = "lizard";
+    const choiceKeys = Object.keys(CHOICES);
+    computerChoice = choiceKeys[Math.floor(Math.random() * choiceKeys.length)];
+}
+
+// Shows chosen icon for computer and writes out the choice for both players in words
+function displayChoice(elementMap, choice, role) {
+    elementMap[choice].classList.add("selected");
+    if (role === "computer") {
+        ELEMENTS.computer.choice.textContent = ` chose '${CHOICES[choice].name}'`;
     } else {
-        computerChoice = "spock";
+        ELEMENTS.player.choice.textContent = ` - selected '${CHOICES[choice].name}'`;
     }
 }
 
-// Display the computers choice in text format.
-function displayComputerChoice() {
-    switch (computerChoice) {
-        case "rock":
-            computerRock.classList.add("selected");
-            computerChoiceEl.textContent = " chose 'Rock'";
-            break;
-        case "paper":
-            computerPaper.classList.add("selected");
-            computerChoiceEl.textContent = " chose 'Paper'";
-            break;
-        case "scissors":
-            computerScissors.classList.add("selected");
-            computerChoiceEl.textContent = " chose 'Scissors'";
-            break;
-        case "lizard":
-            computerLizard.classList.add("selected");
-            computerChoiceEl.textContent = " chose 'Lizard'";
-            break;
-        case "spock":
-            computerSpock.classList.add("selected");
-            computerChoiceEl.textContent = " chose 'Spock'";
-            break;
-        default:
-            break;
-    }
-}
-
-// Check result, update scores and show feedback.
+// Check result of a game, update scores and provides feedback.
 function updateScore(playerChoice) {
     if (playerChoice === computerChoice) {
-        resultText.textContent = "It's a tie.";
+        ELEMENTS.resultText.textContent = "It's a draw!";
     } else {
-        const choice = choices[playerChoice];
+        const choice = CHOICES[playerChoice];
         if (choice.defeats[computerChoice]) {
-            resultText.textContent = `You Won! ${choice.defeats[computerChoice]}`;
+            ELEMENTS.resultText.textContent = `You've Won! ${choice.defeats[computerChoice]}`;
             playerScoreNumber++;
-            playerScoreEl.textContent = playerScoreNumber;
+            ELEMENTS.player.score.textContent = playerScoreNumber;
         } else {
-            const defeatText = choices[computerChoice].defeats[playerChoice];
-            resultText.textContent = `You Lost! ${defeatText}`;
+            const defeatText = CHOICES[computerChoice].defeats[playerChoice];
+            ELEMENTS.resultText.textContent = `Computer Won! ${defeatText}`;
             computerScoreNumber++;
-            computerScoreEl.textContent = computerScoreNumber;
+            ELEMENTS.computer.score.textContent = computerScoreNumber;
         }
     }
 }
@@ -157,47 +141,27 @@ function updateScore(playerChoice) {
 function checkResult(playerChoice) {
     resetSelected();
     computerRandomChoice();
-    displayComputerChoice();
+    displayChoice(ELEMENTS.computer.options, computerChoice, "computer");
     updateScore(playerChoice);
 }
 
 // Player's selection to start game and displays choice in text format.
 function select(playerChoice) {
     checkResult(playerChoice);
-    switch (playerChoice) {
-        case "rock":
-            playerRock.classList.add("selected");
-            playerChoiceEl.textContent = "- selected 'Rock'";
-            break;
-        case "paper":
-            playerPaper.classList.add("selected");
-            playerChoiceEl.textContent = "- selected 'Paper'";
-            break;
-        case "scissors":
-            playerScissors.classList.add("selected");
-            playerChoiceEl.textContent = "- selected 'Scissors'";
-            break;
-        case "lizard":
-            playerLizard.classList.add("selected");
-            playerChoiceEl.textContent = "- selected 'Lizard'";
-            break;
-        case "spock":
-            playerSpock.classList.add("selected");
-            playerChoiceEl.textContent = "- selected 'Spock'";
-            break;
-        default:
-            break;
-    }
+    displayChoice(ELEMENTS.player.options, playerChoice, "player");
 }
+
+// Exposes 'select' function to global scope.
 window.select = select;
 
 // Initialize game when script loads.
 resetAll();
 
-// Hamburger menu toggle for mobile view.
+// Hamburger menu toggle for smaller device screens.
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
+// Toggle 'active' class for hamburger and nav menu on click.
 hamburger.addEventListener("click", () => {
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
