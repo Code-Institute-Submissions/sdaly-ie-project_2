@@ -1,11 +1,14 @@
+/* Importing external fonts from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat+Alternates:ital,wght@1,800&family=Roboto:wght@300&display=swap");
 
+/* Global styles */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Header styles */
 header {
     font-family: "Arial", sans-serif;
     text-align: center;
@@ -14,15 +17,18 @@ header {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Styling list items to not have default bullet points */
 li {
     list-style: none;
 }
 
+/* Styling all anchor tags */
 a {
     color: black;
     text-decoration: none;
 }
 
+/* Navigation bar styling */
 .navbar {
     min-height: 70px;
     display: flex;
@@ -32,6 +38,7 @@ a {
     flex-direction: column;
 }
 
+/* Styles horizontal flex container with elements spaced out evenly with a gap */
 .nav-menu {
     display: flex;
     justify-content: space-between;
@@ -40,35 +47,40 @@ a {
     flex-direction: row;
 }
 
+/* Styles the branding link with centered text and increased font size */
 .nav-branding {
     font-size: 2rem;
     text-align: center;
 }
 
+/* Anchor link hover effect within the navbar */
 .nav-link {
     transition: 0.7s ease;
 }
 
+/* Which underlines link when hovered over and changes text color */
 .nav-link:hover {
     color: dodgerblue;
     text-decoration: underline;
 }
 
+/* Hamburger icon styling for mobile responsiveness, hidden by default */
 .hamburger {
     display: none;
     cursor: pointer;
 }
 
+/* Styles black horizontal block for hamburger menu with transition effects */
 .bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: black;
 }
 
+/* Heading styles with various font families */
 h1 {
     padding-bottom: 20px;
     font-family: "Montserrat Alternates", sans-serif;
@@ -93,6 +105,7 @@ h3 {
     line-height: 2;
 }
 
+/* Container styling for content layout */
 .container {
     text-align: center;
     margin-left: 1rem;
@@ -101,6 +114,7 @@ h3 {
     padding-right: 1rem;
 }
 
+/* Block styling for content layout */
 .block-text {
     text-align: justify;
     margin-left: 1rem;
@@ -109,81 +123,88 @@ h3 {
     padding-right: 1rem;
 }
 
+/* Ensures embedded video does not exceed container's width */
 .block {
     max-width: 100%;
 }
 
+/* Styling iframes to not have default border */
 iframe {
     border: none;
 }
 
+/* Game container related styling with adaptive width and height */
 .game-container {
     width: auto;
     height: auto;
 }
 
+/* Adds a smooth transition effect to game icons when they are transformed */
 .game-box {
     transition: transform 0.3s;
 }
 
+/* Player related container styling */
 .player-container {
     margin: auto;
 }
 
+/* FontAwesome icon styling */
 .far {
     font-size: 50px;
     margin-right: 40px;
 }
 
+/* Enlarges when pointer is on icons in player's choice section */
 #player .far,
 #player .choice {
     transform: scale(1.1);
     cursor: pointer;
 }
 
+/* Sets the colour of the computer choice icons to black */
 #computer .far,
 #computer .choice {
     color: black;
 }
 
+/* Removes right margin from last font-awesome icon for both player & computer sections */
 #player .far:last-of-type,
 #computer .far:last-of-type {
     margin-right: 0;
 }
 
+/* Styling of elements that are selected which overrides other color styles */
 .selected {
     color: red !important;
 }
 
-.reset {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Styling sets cursor to a pointer when hovered */
 .reset-icon {
-    font-size: 30px;
     cursor: pointer;
 }
 
+/* Styling for centering its content both horizontally & vertically */
 .result-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Styling for text displaying game results - Note: margin unset declaration was 
+used to reset the margin property to its initial value */
 .result-text {
     font-size: 40px;
     margin: unset;
     margin-top: 20px;
 }
 
-/* When cursor hovers over the image, it enlarges */
+/* Hover effect for enlarging (player images) */
 .game-box:hover {
     transform: scale(1.1);
 }
 
-/* Positioning of Footer icons horizontally across webpage */
+/* Styling effects for Social media icons in footer of webpage */
 .social {
     display: flex;
     flex-direction: row;
@@ -193,33 +214,43 @@ iframe {
     padding: 25px;
 }
 
-/* Turns fontawesome icons colour  */
+/* Sets color of social link icons to white */
 .social a {
     color: white;
 }
 
-/* When cursor points over icon it enlarges */
+/* Hover effect for social media icons in footer of webpage */
 .social a:hover i {
     transform: scale(1.6);
 }
 
+/* Responsive design styling for tablet devices */
 @media (max-width: 768px) {
+
+    /* Displays a hamburger, which is three horizontal lines as a vertical block */
     .hamburger {
         display: block;
     }
 
+    /* When hamburger is actived the middle horitonal line disappears */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
 
+    /* The activated hamburgers top horitonal line shifts and rotates */
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
+    /* The activated hamburgers bottom horitonal line also shifts and rotates. 
+    Together lines 1 and 3 cross forming an X symbol to close the menu */
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Styling for nav menu that is initially positioned off-screen to the left,
+     which is a white column with centralized menu text, that can occupy 55% of 
+     the viewport width when transitions smoothly into view */
     .nav-menu {
         position: fixed;
         top: 11em;
@@ -232,32 +263,45 @@ iframe {
         transition: 0.3s;
     }
 
+    /* Spacing for individual navigation items */
     .nav-item {
         margin: 16px 0;
     }
 
+    /* When navigation menu is active, position it starting from the left 
+    edge of its container. */
     .nav-menu.active {
         left: 0;
     }
 }
 
+/* Responsive design styling for smartphone devices */
 @media (max-width: 414px) {
+
+    /* Displays a hamburger, which is three horizontal lines as a vertical block */
     .hamburger {
         display: block;
     }
 
+    /* When hamburger is actived the middle horitonal line disappears */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
 
+    /* The activated hamburgers top horitonal line shifts and rotates */
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
+    /* The activated hamburgers bottom horitonal line also shifts and rotates. 
+    Together lines 1 and 3 cross forming an X symbol to close the menu */
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Styling for nav menu that is initially positioned off-screen to the left,
+    which is a white column with centralized menu text, that can occupy 55% of 
+    the viewport width when transitions smoothly into view */
     .nav-menu {
         position: fixed;
         top: 19em;
@@ -270,32 +314,45 @@ iframe {
         transition: 0.3s;
     }
 
+    /* Spacing for individual navigation items */
     .nav-item {
         margin: 16px 0;
     }
 
+    /* When navigation menu is active, position it starting from the left 
+    edge of its container. */
     .nav-menu.active {
         left: 0;
     }
 }
 
+/* Responsive design styling for smaller smartphone devices */
 @media (max-width: 320px) {
+
+    /* Displays a hamburger, which is three horizontal lines as a vertical block */
     .hamburger {
         display: block;
     }
 
+    /* When hamburger is actived the middle horitonal line disappears */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
 
+    /* The activated hamburgers top horitonal line shifts and rotates */
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
+    /* The activated hamburgers bottom horitonal line also shifts and rotates. 
+    Together lines 1 and 3 cross forming an X symbol to close the menu */
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    /* Styling for nav menu that is initially positioned off-screen to the left,
+    which is a white column with centralized menu text, that can occupy 55% of 
+    the viewport width when transitions smoothly into view */
     .nav-menu {
         position: fixed;
         top: 22em;
@@ -308,10 +365,13 @@ iframe {
         transition: 0.3s;
     }
 
+    /* Spacing for individual navigation items */
     .nav-item {
         margin: 16px 0;
     }
 
+    /* When navigation menu is active, position it starting from the left 
+    edge of its container. */
     .nav-menu.active {
         left: 0;
     }
