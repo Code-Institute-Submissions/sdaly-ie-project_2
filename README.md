@@ -45,7 +45,7 @@ So, what will it be? Rock, Paper, Scissors, Lizard, or Spock? Choose wisely and 
 | Large Desktop 1200px       | Tested: works |
 | XL Desktop >1200px         | Tested: works |
 
-_Note: The above testing was carried out in Chrome DevTools_ 
+_Note: The above testing was carried out using Chrome DevTools. Where the scope of testing encompassed the webpage loading and displaying its intended layout and content correctly; links functioned correctly; embedded video operates correctly; game and reset operate correctly (including displaying the correct results)_ 
 <br>
 <br>
 
@@ -59,6 +59,8 @@ _Note: The above testing was carried out in Chrome DevTools_
 | Safari                     | Tested: works |
 | DuckDuckGo                 | Tested: works |
 
+_Note: The scope of testing encompassed the webpage loading and displaying its intended layout and content correctly; links functioned correctly; embedded video operates correctly; game and reset operate correctly (including displaying the correct results)_
+
 <br>
 
 >#### __3. High level summary on bugs and issues encountered:__
@@ -71,16 +73,24 @@ _Note: The above testing was carried out in Chrome DevTools_
 
 * __Game_Limitations:__ <br>
   Having taking a MVP approach to the development of the game, a limitation is its UI/UX, particularly on smaller mobile screens, which could do with further development.  
+
+* __Unfixed bugs:__ <br>
+  No unfixed bugs.
+  
 <br>
 
 >#### 4. __Lighthouse assessment:__
 * The open-source tool Lighthouse was used to provide insights and actionable guidance for improving webpage design by assessing its quality via five metrics: Performance, Accessibility, Best Practices, Search Engine Opitmization (SEO) and Progressive Web App (PWA). With particular emphasis during the project paid to accessibility to ensure the site is more accessible to users with disabilities.
+<br>
+<br>
 
 __Fig. 1  Summary result for mobile's__ 
+
 ![Mobile Lighthouse Summary Report Screenshot](assets/images/mobile-lighthouse.jpg)
 <br>
 
 __Fig. 2  Summary result for Desktop's__ 
+
 ![Desktop Lighthouse Summary Report Screenshot](assets/images/desktop-lighthouse.jpg)
 <br>
 <br>
@@ -97,6 +107,7 @@ _No errors were returned when passing code through the official W3C validator by
 _No errors were found when passing code through the official (Jigsaw) validator by direct input._
 
 ![W3C CSS Validation Service Overall Result Screenshot](assets/images/css-validation1.jpg)
+<br>
 
 __Note:__ _However, (x1) Warning was observed and this was related to the @import url()._
 
@@ -120,7 +131,7 @@ assessment_
 <br>
 <br>
 
->#### 6. __User Stories:__
+## __User Stories:__
 
   __User Story:__ <br>
   I want to quickly learn and easily navigate through the _“Paper, Rock, Scissors, Lizard, Spock Game”_ website. So that I can understand its history, learn the rules and enjoy playing the game without confusion.
@@ -150,7 +161,7 @@ __User Story Testing:__ <br>
 <br>
 <br>
 
->#### 7. __Features:__
+##  __Features:__
 🚀 __Galactic Game Fusion:__ An intertwining of traditional and pop culture through the "Paper, Rock, Scissors, Lizard, Spock Game," offering a digital gameplay experience that melds ancient hand games with contemporary references from the Big Bang Theory.
 
 💻 __Intuitive Navigation:__ A sleek navigation bar with cosmic clarity, guiding visitors through the interstellar journey from Home, through the mystical History, the crucial Rules, and ultimately landing them at the gaming portal - the Game section.
@@ -181,14 +192,14 @@ __User Story Testing:__ <br>
 <br>
 <br>
 
->#### 8. __Deployment:__
+## __Deployment:__
 
 * The site was deployed using GitHub, by visiting the repository, clicking Settings, selecting Pages, and ensuring that the Source was set to Main before Saving. Once the site had refreshed a link appeared on the page with the text: "Your site is live at", which when clicked confirmed a successful deployment. The live link can be found here - 
   <https://sdaly-ie.github.io/project_2/>
 <br>
 <br>
 
->#### 9. __Credits:__
+## __Credits:__
 
 Include Code Institutes Sample README.md file, its learning curriculum, love maths and a series of tutorials:
 
